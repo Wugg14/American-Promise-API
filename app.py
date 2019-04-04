@@ -20,7 +20,7 @@ def incoming_json():
         #find salesforce ID
         SFID = find_account_id(email) #Salesforce ID
         #make new opportunity record
-        #create_new_opportunity(SFID, amount, reoccurenceType)
+        create_new_opportunity(SFID, amount, reoccurenceType)
         app.logger.info('Created Opportunity for SFID' + SFID)
         return "Success!"
     else:
