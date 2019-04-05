@@ -1,5 +1,4 @@
 from flask import Flask, request #import main Flask class and request object
-import json
 from transactionDetails import get_transaction_details, get_reoccurence_type #import transaction details, GET request to Authorize.net and reoccurence type function
 from salesforceCalls import find_account_id, create_new_opportunity  #import salesforce API requests
 

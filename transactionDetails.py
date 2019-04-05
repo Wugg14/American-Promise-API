@@ -15,7 +15,7 @@ def get_transaction_details(transacationid):
         }
     }
     header = {'Content-Type': 'application/json'}
-    r = requests.post("https://apitest.authorize.net/xml/v1/request.api", json = payload, headers = header)
+    r = requests.post("https://api.authorize.net/xml/v1/request.api", json = payload, headers = header)
     r = r.text
     text = r.encode('utf8')[3:].decode('utf8')
     info = json.loads(text)
