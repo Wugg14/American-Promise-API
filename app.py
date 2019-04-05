@@ -5,6 +5,11 @@ from salesforceCalls import find_account_id, create_new_opportunity  #import sal
 
 app = Flask(__name__) #create the Flask app
 
+#Hello World test for root of app
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
 @app.route('/json', methods=['POST']) #GET requests will be blocked
 def incoming_json():
     req_data = request.get_json(force=True)
