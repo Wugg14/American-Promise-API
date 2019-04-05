@@ -21,13 +21,17 @@ def incoming_json():
         #get the authorize subscription ID to determine the reoccurence type
         subscriptionID = authorizeData['transaction']['subscription']['id']
         PayNum = authorizeData['transaction']['subscription']['payNum']
-        reoccurenceType = get_reoccurence_type(subscriptionID)
-        #find salesforce ID
-        SFID = find_account_id(email) #Salesforce ID
-        #make new opportunity record
-        create_new_opportunity(SFID, amount, reoccurenceType, PayNum)
-        app.logger.info('Created Opportunity for SFID' + SFID)
-        return "Success!"
+        if PayNum != 1:
+            reoccurenceType = get_reoccurence_type(subscriptionID)
+            #find salesforce ID
+            SFID = find_account_id(email) #Salesforce ID
+            #make new opportunity record
+            create_new_opportunity(SFID, amount, reoccurenceType, PayNum)
+            app.logger.info('Created Opportunity for SFID' + SFID)
+            return "Success!"
+        else:
+            app.logger.info('Handled by Zapier')
+            return "Did not create record, handled by Zapier"
     else:
         app.logger.info('Not a Sub')
         return "Error: Not a Subscription"
