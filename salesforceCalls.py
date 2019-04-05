@@ -18,7 +18,7 @@ def find_account_id(email):
     return accountID
 
 #makes a request to salesforce to create the opportunity
-def create_new_opportunity(ID, amount, reoccurenceType):
+def create_new_opportunity(ID, amount, reoccurenceType, PayNum):
     #format dating
     fmt = '%Y-%m-%dT%H:%M:%S'
     d = datetime.datetime.now()
@@ -34,7 +34,8 @@ def create_new_opportunity(ID, amount, reoccurenceType):
 	'OwnerId':'005f2000006uFa3AAE',
         'Payment_Method__c': 'Credit Card',
         'Reoccurence_Type__c': reoccurenceType,
-        'Designation__c': 'C4'
+        'Designation__c': 'C4',
+        'Recurring_Donation_Number__c': PayNum
 	})
     return 'Success!'
     
