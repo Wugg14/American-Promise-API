@@ -17,7 +17,7 @@ def incoming_json():
         amount = req_data['payload']['authAmount']
         authorizeID = req_data['payload']['id']
     except:
-        app.logger.info("Failed Payload = " + req_data)
+        app.logger.info(req_data)
         return "Payload did not include necessary data"
     authorizeData = get_transaction_details(authorizeID)
     email = authorizeData['transaction']['customer']['email']
