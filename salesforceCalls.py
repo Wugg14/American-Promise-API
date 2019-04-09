@@ -3,10 +3,9 @@ import constants
 from datetime import timedelta
 from simple_salesforce import Salesforce
 
-sf = Salesforce(username= constants.SF_USER_NAME, password= constants.SF_PASSWORD, security_token= constants.SF_SECURITY_TOKEN)
-
 #finds the salesforce account ID
 def find_account_id(email):
+    sf = Salesforce(username= constants.SF_USER_NAME, password= constants.SF_PASSWORD, security_token= constants.SF_SECURITY_TOKEN)
     #Find Contact
     query = "SELECT Id, Email FROM Contact WHERE Email = "
     queryEmail = "'" + email + "'"
@@ -19,6 +18,7 @@ def find_account_id(email):
 
 #makes a request to salesforce to create the opportunity
 def create_new_opportunity(ID, amount, reoccurenceType, PayNum):
+    sf = Salesforce(username= constants.SF_USER_NAME, password= constants.SF_PASSWORD, security_token= constants.SF_SECURITY_TOKEN)
     #format dating
     fmt = '%Y-%m-%dT%H:%M:%S'
     d = datetime.datetime.now()
