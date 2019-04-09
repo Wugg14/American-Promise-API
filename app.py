@@ -13,8 +13,12 @@ def hello_world():
 def incoming_json():
     req_data = request.get_json(force=True)
     app.logger.info('received JSON')
-    amount = req_data['payload']['authAmount']
-    authorizeID = req_data['payload']['id']
+    try:
+        amount = req_data['payload']['authAmount']
+        authorizeID = req_data['payload']['id']
+    except:
+        app.logger.info("Failed Payload = " + req_data)
+        return "Payload did not include necessary data"
     authorizeData = get_transaction_details(authorizeID)
     email = authorizeData['transaction']['customer']['email']
     if check_subscription_key(authorizeData['transaction']) == True:
@@ -24,7 +28,11 @@ def incoming_json():
         if PayNum != 1:
             reoccurenceType = get_reoccurence_type(subscriptionID)
             #find salesforce ID
-            SFID = find_account_id(email) #Salesforce ID
+            try:
+                SFID = find_account_id(email) #Salesforce ID
+            except:
+                app.logger.info("Salesforce Error, Authorize Transaction ID: " + authorizeID)
+                return "Salesforce Error"
             #make new opportunity record
             create_new_opportunity(SFID, amount, reoccurenceType, PayNum)
             app.logger.info('Created Opportunity for SFID' + SFID)
