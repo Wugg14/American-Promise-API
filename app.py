@@ -13,11 +13,11 @@ def hello_world():
 def incoming_json():
     req_data = request.get_json(force=True)
     app.logger.info('received JSON')
+    app.logger.info(req_data)
     try:
         amount = req_data['payload']['authAmount']
         authorizeID = req_data['payload']['id']
     except:
-        app.logger.info(req_data)
         return "Payload did not include necessary data"
     authorizeData = get_transaction_details(authorizeID)
     email = authorizeData['transaction']['customer']['email']
