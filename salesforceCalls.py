@@ -35,7 +35,8 @@ def create_new_opportunity(ID, amount, reoccurenceType, PayNum):
         'Payment_Method__c': 'Credit Card',
         'Reoccurence_Type__c': reoccurenceType,
         'Designation__c': 'C4',
-        'Recurring_Donation_Number__c': PayNum
+        'Recurring_Donation_Number__c': PayNum,
+        'Credit_Card_Processor__c': 'Authorize.net'
 	})
     return 'Success!'
     
