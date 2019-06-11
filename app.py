@@ -17,10 +17,19 @@ def incoming_json():
     try:
         amount = req_data['payload']['authAmount']
         authorizeID = req_data['payload']['id']
-    except:
+        authorizeData = get_transaction_details(authorizeID)
+        if 'transaction' in authorizeData:
+            customer = authorizeData['transaction']['customer']
+            if 'email' in customer:
+                email = authorizeData['transaction']['customer']['email']
+            else:
+                return "Payload did not include necessary data"
+        else:
+            return "Payload did not include necessary data"
+
+    except KeyError:
         return "Payload did not include necessary data"
-    authorizeData = get_transaction_details(authorizeID)
-    email = authorizeData['transaction']['customer']['email']
+
     if check_subscription_key(authorizeData['transaction']) == True:
         #get the authorize subscription ID to determine the reoccurence type
         subscriptionID = authorizeData['transaction']['subscription']['id']
