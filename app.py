@@ -18,6 +18,8 @@ def incoming_json():
         amount = req_data['payload']['authAmount']
         authorizeID = req_data['payload']['id']
         authorizeData = get_transaction_details(authorizeID)
+        settlementTimeLocal = authorizeData['transaction']['batch']['settlementTimeLocal']
+        settlementDate = settlementTimeLocal.split('T')
         if 'transaction' in authorizeData:
             customer = authorizeData['transaction']['customer']
             if 'email' in customer:
@@ -43,7 +45,7 @@ def incoming_json():
                 app.logger.info("Salesforce Error, Authorize Transaction ID: " + authorizeID)
                 return "Salesforce Error"
             #make new opportunity record
-            create_new_opportunity(SFID, amount, reoccurenceType, PayNum)
+            create_new_opportunity(SFID, amount, reoccurenceType, PayNum, authorizeID, settlementDate[0], subscriptionID)
             app.logger.info('Created Opportunity for SFID' + SFID)
             return "Success!"
         else:

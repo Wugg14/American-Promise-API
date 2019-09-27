@@ -48,7 +48,25 @@ def get_reoccurence_type(subscriptionid):
         return 'Recurring Monthly'
     elif duration == 12:
         return 'Recurring Annual'
-    
+
+
+def test_get_details():
+    payload = {
+    "getTransactionDetailsRequest": {
+        "merchantAuthentication": {
+            "name": constants.AUTHORIZE_NAME,
+            "transactionKey": constants.AUTHORIZE_TRANSACTION_KEY
+        },
+        "transId": 61768997511
+    }
+    }
+    header = {'Content-Type': 'application/json'}
+    r = requests.post("https://api.authorize.net/xml/v1/request.api", json=payload, headers=header)
+    if str(r) == '<Response [200]>':
+        return True
+    else:
+        return False
+
     
 
 
