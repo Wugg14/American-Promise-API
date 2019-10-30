@@ -1,6 +1,5 @@
 import requests
 import json
-import codecs
 import constants
 
 #Makes a request for transaction details to Authorize API

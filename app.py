@@ -17,17 +17,16 @@ def incoming_json():
     try:
         amount = req_data['payload']['authAmount']
         authorizeID = req_data['payload']['id']
+        authorizeDate = req_data['eventDate']
         authorizeData = get_transaction_details(authorizeID)
-        settlementTimeLocal = authorizeData['transaction']['batch']['settlementTimeLocal']
-        settlementDate = settlementTimeLocal.split('T')
         if 'transaction' in authorizeData:
             customer = authorizeData['transaction']['customer']
             if 'email' in customer:
                 email = authorizeData['transaction']['customer']['email']
             else:
-                return "Payload did not include necessary data"
+                return "Authorize did not provide necessary email"
         else:
-            return "Payload did not include necessary data"
+            return "Authorize did not provide necessary customer information"
 
     except KeyError:
         return "Payload did not include necessary data"
@@ -45,7 +44,7 @@ def incoming_json():
                 app.logger.info("Salesforce Error, Authorize Transaction ID: " + authorizeID)
                 return "Salesforce Error"
             #make new opportunity record
-            create_new_opportunity(SFID, amount, reoccurenceType, PayNum, authorizeID, settlementDate[0], subscriptionID)
+            create_new_opportunity(SFID, amount, reoccurenceType, PayNum, authorizeID, subscriptionID, authorizeDate)
             app.logger.info('Created Opportunity for SFID' + SFID)
             return "Success!"
         else:
@@ -54,8 +53,6 @@ def incoming_json():
     else:
         app.logger.info('Not a Sub')
         return "Error: Not a Subscription"
-    
-    
 
 def check_subscription_key(dict):
     if 'subscription' in dict: 
