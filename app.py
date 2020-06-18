@@ -52,6 +52,7 @@ def incoming_json():
             return "Did not create record, handled by Zapier"
     else:
         app.logger.info('Not a Sub')
+        app.logger.info(authorizeData['transaction'])
         return "Error: Not a Subscription"
 
 def check_subscription_key(dict):
