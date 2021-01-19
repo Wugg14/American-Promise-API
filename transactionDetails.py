@@ -44,9 +44,9 @@ def get_reoccurence_type(subscriptionid):
     data = get_subscription_details(subscriptionid)
     duration = data['subscription']['paymentSchedule']['interval']['length']
     if duration == 1:
-        return 'Recurring Monthly'
+        return 'monthly'
     elif duration == 12:
-        return 'Recurring Annual'
+        return 'annual'
 
 
 def test_get_details():
@@ -66,7 +66,6 @@ def test_get_details():
     else:
         return False
 
-    
 
 
 

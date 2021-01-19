@@ -1,5 +1,5 @@
 from flask import Flask, request #import main Flask class and request object
-from transactionDetails import get_transaction_details, get_reoccurence_type #import transaction details, GET request to Authorize.net and reoccurence type function
+from transactionDetails import get_transaction_details, get_reoccurence_type, get_subscription_details #import transaction details, GET request to Authorize.net and reoccurence type function
 from salesforceCalls import find_account_id, create_new_opportunity  #import salesforce API requests
 
 app = Flask(__name__) #create the Flask app
@@ -31,14 +31,17 @@ def incoming_json():
     except KeyError:
         return "Payload did not include necessary data"
 
-    if check_subscription_key(authorizeData['transaction']) == True:
+    if (check_subscription_key(authorizeData['transaction']) == True):
         #get the authorize subscription ID to determine the reoccurence type
         subscriptionID = authorizeData['transaction']['subscription']['id']
         PayNum = authorizeData['transaction']['subscription']['payNum']
         if PayNum != 1:
             reoccurenceType = get_reoccurence_type(subscriptionID)
+            subInfo = get_subscription_details(subscriptionID)
+            email = subInfo['subscription']['profile']['email']
             #find salesforce ID
             try:
+                print(email)
                 SFID = find_account_id(email) #Salesforce ID
             except:
                 app.logger.info("Salesforce Error, Authorize Transaction ID: " + authorizeID)
@@ -51,9 +54,15 @@ def incoming_json():
             app.logger.info('Handled by Zapier')
             return "Did not create record, handled by Zapier"
     else:
-        app.logger.info('Not a Sub')
-        app.logger.info(authorizeData['transaction'])
-        return "Error: Not a Subscription"
+        if authorizeData['transaction']['recurringBilling'] == True:
+            app.logger.info('AUTHORIZE API SUB GLITCH PLEASE FIX')
+            app.logger.info(authorizeData['transaction'])
+            return "Authorize API Issue"
+
+        else:
+            app.logger.info('Not a Sub')
+            app.logger.info(authorizeData['transaction'])
+            return "Error: Not a Subscription"
 
 def check_subscription_key(dict):
     if 'subscription' in dict: 

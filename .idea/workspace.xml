@@ -4,6 +4,7 @@
     <list default="true" id="0d59e003-deac-4ad7-86cd-4b8f77d9da46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transactionDetails.py" beforeDir="false" afterPath="$PROJECT_DIR$/transactionDetails.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/constants.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+              <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -25,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transactionDetails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+            <state relative-caret-position="918">
+              <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -37,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+            <state relative-caret-position="219">
+              <caret line="46" column="49" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="49" />
               <folding>
                 <element signature="e#0#76#0" expanded="true" />
               </folding>
@@ -49,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salesforceCalls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+            <state relative-caret-position="374">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -70,8 +71,16 @@
       <find>not</find>
       <find>authorizeDa</find>
       <find>check</find>
-      <find>not</find>
+      <find>salesforce</find>
       <find>Not a Sub</find>
+      <find>get_sub</find>
+      <find>email</find>
+      <find>get_s</find>
+      <find>get_reo</find>
+      <find>salesfore</find>
+      <find>f</find>
+      <find>err</find>
+      <find>error</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -82,42 +91,32 @@
       <list>
         <option value="$PROJECT_DIR$/salesforceCalls.py" />
         <option value="$PROJECT_DIR$/Payloads" />
-        <option value="$PROJECT_DIR$/transactionDetails.py" />
-        <option value="$PROJECT_DIR$/constants.py" />
         <option value="$PROJECT_DIR$/../SB Admin/startbootstrap-sb-admin-2-gh-pages/index.html" />
+        <option value="$PROJECT_DIR$/transactionDetails.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="285" />
-    <option name="y" value="165" />
-    <option name="width" value="1440" />
-    <option name="height" value="810" />
+    <option name="x" value="190" />
+    <option name="y" value="110" />
+    <option name="width" value="960" />
+    <option name="height" value="540" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Flask API" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Flask API" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MVR Flask Database" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -218,18 +217,19 @@
       <workItem from="1582139671922" duration="1541000" />
       <workItem from="1587741055469" duration="448000" />
       <workItem from="1588720089704" duration="771000" />
-      <workItem from="1592499055817" duration="2604000" />
+      <workItem from="1592499055817" duration="6162000" />
+      <workItem from="1593443932463" duration="5997000" />
+      <workItem from="1600115283420" duration="241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43307000" />
+    <option name="totallyTimeSpent" value="53103000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28698465" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2867804" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -243,8 +243,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294702" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.40066224" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.31953642" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.08722741" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.43046358" />
       <window_info anchor="bottom" id="Pylint" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -278,14 +278,14 @@
     <entry file="file://$PROJECT_DIR$/constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transactionDetails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+        <state relative-caret-position="918">
+          <caret line="56" column="26" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -294,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/salesforceCalls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+        <state relative-caret-position="374">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
@@ -304,8 +304,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+        <state relative-caret-position="219">
+          <caret line="46" column="49" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="49" />
           <folding>
             <element signature="e#0#76#0" expanded="true" />
           </folding>
